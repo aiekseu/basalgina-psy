@@ -22,8 +22,7 @@ const prices = [
 		duration: '80 минут',
 		description:
 			'Обсуждения правил терапии, прописанных в контракте\n\n' +
-			'Формулировка вашего запроса\n\n' +
-			'Определение стратегии работы',
+			'Формулировка вашего запроса и определение стратегии работы',
 		cost: '3500 рублей'
 	},
 	{
@@ -47,15 +46,11 @@ const PricesSection = () => {
 				<Roll />
 				<div
 					style={{
-						padding: 24
+						padding: 24,
+						transform: 'translateY(-20vh)'
 					}}
 				>
-					<SectionName
-						sx={{
-							position: 'sticky',
-							top: 64
-						}}
-					>
+					<SectionName>
 						Фор<Bl>м</Bl>ат работы
 					</SectionName>
 					{prices.map(price => (

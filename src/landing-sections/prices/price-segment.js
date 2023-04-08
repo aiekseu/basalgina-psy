@@ -8,13 +8,14 @@ const PriceSegment = ({ price }) => {
 	return (
 		<div
 			style={{
-				height: '100svh',
+				// minHeight: '33svh',
+				marginTop: '10vh',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
 				overflowX: 'hidden',
-				scrollSnapAlign: 'start',
+				scrollSnapAlign: 'center',
 				scrollSnapStop: 'always'
 			}}
 		>
@@ -31,7 +32,7 @@ const PriceSegment = ({ price }) => {
 				</Text>
 				<Text variant={'body2'}>{price.duration}</Text>
 			</Stack>
-			<Text textAlign={'justify'} mt={3} width={'100%'}>
+			<Text textAlign={'justify'} mt={2} width={'100%'}>
 				{price.description}
 			</Text>
 			<Text accent mt={3} variant={'h4'} textAlign={'end'} width={'100%'}>

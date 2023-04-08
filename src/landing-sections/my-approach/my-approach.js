@@ -25,11 +25,11 @@ const MyApproachSection = () => {
 				<SectionName pb={2}>
 					Мо<Gr>й</Gr> подход
 				</SectionName>
-				<Text textAlign={'justify'} variant={'body2'}>
+				<Text textAlign={'justify'} variant={'body1'}>
 					Я работаю в рамках долгосрочной терапии – клиенты на протяжении систематических сессий приобретают новый опыт,
 					который важен для глубоких внутренних изменений.
 				</Text>
-				<Text textAlign={'justify'} variant={'body2'} mt={2}>
+				<Text textAlign={'justify'} variant={'body1'} mt={2}>
 					Использую упражнения и техники интегрального подхода в консультировании, телесно-ориентированной терапии,
 					работаю с метафорическими ассоциативными картами.
 				</Text>

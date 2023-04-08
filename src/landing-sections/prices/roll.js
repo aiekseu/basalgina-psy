@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Box } from '@mui/material';
 import { bigRoll } from '@/public/spritesheets';
 import Image from 'next/image';
 import { pricesRef } from '@/src/landing-sections/prices/prices';
+import { educationRef } from '@/src/landing-sections/education/education';
 
 const FRAMES_NUMBER = 55;
 
 const Roll = () => {
 	const [frame, setFrame] = useState(0);
 	const [offset, setOffset] = useState(0);
-	const [componentOffset, setComponentOffset] = useState(0);
+	const [pricesOffset, setPricesOffset] = useState(0);
+	const [educationOffset, setEducationOffset] = useState(0);
 
 	useEffect(() => {
 		const onScroll = () => setOffset(window.scrollY);
@@ -20,17 +21,23 @@ const Roll = () => {
 	}, []);
 
 	useEffect(() => {
-		if (pricesRef.current) {
-			setComponentOffset(pricesRef.current.offsetTop);
+		if (pricesRef.current && educationRef.current) {
+			setPricesOffset(pricesRef.current.offsetTop);
+			setEducationOffset(educationRef.current.offsetTop);
 		}
 	}, [pricesRef]);
 
 	useEffect(() => {
-		if (offset >= componentOffset) {
-			const height = document.body.scrollHeight - componentOffset - window.innerHeight;
+		if (offset >= pricesOffset - 0.66 * window.innerHeight) {
+			const height = educationOffset - pricesOffset;
 			const step = height / FRAMES_NUMBER;
-			const newFrame = Math.floor((offset - componentOffset) / step);
-			setFrame(newFrame < FRAMES_NUMBER ? newFrame : FRAMES_NUMBER - 1);
+			let newFrame = Math.floor((offset - pricesOffset + 0.66 * window.innerHeight) / step);
+			if (newFrame < 0) {
+				newFrame = 0;
+			} else if (newFrame > FRAMES_NUMBER - 1) {
+				newFrame = FRAMES_NUMBER - 1;
+			}
+			setFrame(newFrame);
 		}
 	}, [offset]);
 
@@ -52,12 +59,7 @@ const Roll = () => {
 					height: '100%'
 				}}
 			>
-				<Image
-					fill
-					src={bigRoll[frame]}
-					alt={'roll'}
-					style={{ objectFit: 'cover', transform: 'scaleY(1.005)', opacity: 0.6 }}
-				/>
+				<Image fill src={bigRoll[frame]} alt={'roll'} style={{ objectFit: 'fill', opacity: 0.5 }} />
 			</div>
 		</div>
 	);
