@@ -3,6 +3,7 @@ import { bigRoll } from '@/public/spritesheets';
 import Image from 'next/image';
 import { pricesRef } from '@/src/landing-sections/prices/prices';
 import { educationRef } from '@/src/landing-sections/education/education';
+import rollSpritesheet from '../../../public/spritesheets/spritesheet.png';
 
 const FRAMES_NUMBER = 55;
 
@@ -48,19 +49,28 @@ const Roll = () => {
 				top: 32,
 				overflow: 'hidden',
 				height: '90svh',
-				width: '95%',
+				width: '100%',
 				zIndex: -1
 			}}
 		>
-			<div
+			<Image
+				priority
+				unoptimized
+				src={rollSpritesheet}
+				alt={'roll'}
+				sizes={'5500vw'}
+				quality={100}
 				style={{
-					position: 'relative',
-					width: '100%',
-					height: '100%'
+					transform: `translateX(${-frame * 100}vw)`,
+					width: `${5500}vw`,
+					height: '100%',
+					objectFit: 'contain',
+					opacity: 0.5
 				}}
-			>
-				<Image fill src={bigRoll[frame]} alt={'roll'} style={{ objectFit: 'fill', opacity: 0.5 }} />
-			</div>
+				onLoadingComplete={() => {
+					console.log('loaded?');
+				}}
+			/>
 		</div>
 	);
 };

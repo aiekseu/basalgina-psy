@@ -15,8 +15,10 @@ const montserrat = Montserrat({
 });
 
 export const Text = ({ children, accent, ...props }) => {
+	const textStyle = accent ? poiret.style : montserrat.style;
+
 	return (
-		<Typography className={accent ? poiret.className : montserrat.className} {...props} fontWeight={accent ? 400 : 300}>
+		<Typography {...props} sx={{ ...textStyle }} fontWeight={accent ? 400 : 300}>
 			{children}
 		</Typography>
 	);

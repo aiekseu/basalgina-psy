@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Text from '..//src/ui/text';
 import HeroSection from '@/src/landing-sections/hero/hero';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from '@/src/theme/theme';
