@@ -49,7 +49,7 @@ const Roll = () => {
 				top: 32,
 				overflow: 'hidden',
 				height: '90svh',
-				width: '100%',
+				width: '100vw',
 				zIndex: -1
 			}}
 		>
@@ -64,7 +64,7 @@ const Roll = () => {
 					transform: `translateX(${-frame * 100}vw)`,
 					width: `${5500}vw`,
 					height: '100%',
-					objectFit: 'contain',
+					objectFit: 'fit',
 					opacity: 0.5
 				}}
 				onLoadingComplete={() => {

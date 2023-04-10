@@ -18,7 +18,7 @@ export const Text = ({ children, accent, ...props }) => {
 	const textStyle = accent ? poiret.style : montserrat.style;
 
 	return (
-		<Typography {...props} sx={{ ...textStyle }} fontWeight={accent ? 400 : 300}>
+		<Typography {...props} sx={{ ...textStyle, ...props.sx }} fontWeight={accent ? 400 : 300}>
 			{children}
 		</Typography>
 	);

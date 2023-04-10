@@ -11,6 +11,9 @@ const UserGlobalStyles = () => (
 				margin: 0,
 				backgroundColor: '#f3f3f3'
 			},
+			a: {
+				textDecoration: 'none'
+			},
 
 			// scrollbar
 			'&::-webkit-scrollbar': {
