@@ -5,7 +5,7 @@ const UserGlobalStyles = () => (
 	<GlobalStyles
 		styles={{
 			html: {
-				scrollSnapType: 'y mandatory'
+				// scrollSnapType: 'y mandatory'
 			},
 			body: {
 				margin: 0,

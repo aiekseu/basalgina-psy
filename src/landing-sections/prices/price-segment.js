@@ -4,12 +4,12 @@ import { Stack } from '@mui/material';
 import { Text } from '@/src/ui/text';
 import React from 'react';
 
-const PriceSegment = ({ price }) => {
+const PriceSegment = ({ price, first }) => {
 	return (
 		<div
 			style={{
 				// minHeight: '33svh',
-				marginTop: '10vh',
+				marginTop: first ? 32 : '12vh',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',

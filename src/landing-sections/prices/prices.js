@@ -53,8 +53,8 @@ const PricesSection = () => {
 					<SectionName>
 						Фор<Bl>м</Bl>ат работы
 					</SectionName>
-					{prices.map(price => (
-						<PriceSegment key={price.title} price={price} />
+					{prices.map((price, index) => (
+						<PriceSegment key={price.title} price={price} first={index === 0} />
 					))}
 				</div>
 			</section>
