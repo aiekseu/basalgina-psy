@@ -2,12 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Box, Container } from '@mui/material';
 import { Bl, SectionName, Text } from '@/src/ui/text';
 import theme from '@/src/theme/theme';
 import line4 from '../../../public/lines/line4.svg';
 import line5 from '../../../public/lines/line5.svg';
-import roll from '../../../public/lines/roll.svg';
 
 const data = [
 	{
@@ -37,9 +35,7 @@ const WhoIWorkWithSection = () => {
 					marginTop: 32,
 					padding: 24,
 					position: 'relative',
-					overflowX: 'hidden',
-					scrollSnapAlign: 'center',
-					scrollPaddingTop: 500
+					overflowX: 'hidden'
 				}}
 			>
 				<SectionName pb={2}>
@@ -94,17 +90,6 @@ const WhoIWorkWithSection = () => {
 						position: 'absolute',
 						left: 0,
 						top: '50%'
-					}}
-				/>
-				<Image
-					src={roll}
-					alt={'roll'}
-					width={40}
-					height={170}
-					style={{
-						width: 'auto',
-						height: '10vh',
-						marginTop: 24
 					}}
 				/>
 			</section>

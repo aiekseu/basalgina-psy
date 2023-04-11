@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { bigRoll } from '@/public/spritesheets';
 import Image from 'next/image';
 import { pricesRef } from '@/src/landing-sections/prices/prices';
 import { educationRef } from '@/src/landing-sections/education/education';
 import rollSpritesheet from '../../../public/spritesheets/spritesheet.png';
 
-const FRAMES_NUMBER = 55;
+const FRAMES_NUMBER = 69;
 
-const Roll = () => {
+const Roll = ({ setLoaded }) => {
 	const [frame, setFrame] = useState(0);
 	const [offset, setOffset] = useState(0);
 	const [pricesOffset, setPricesOffset] = useState(0);
@@ -46,9 +45,9 @@ const Roll = () => {
 		<div
 			style={{
 				position: 'sticky',
-				top: 32,
+				top: 0,
 				overflow: 'hidden',
-				height: '90svh',
+				height: 'calc(100svh - 16px)',
 				width: '100vw',
 				zIndex: -1
 			}}
@@ -58,17 +57,18 @@ const Roll = () => {
 				unoptimized
 				src={rollSpritesheet}
 				alt={'roll'}
-				sizes={'5500vw'}
+				sizes={'6900vw'}
 				quality={100}
 				style={{
 					transform: `translateX(${-frame * 100}vw)`,
-					width: `${5500}vw`,
+					width: `${FRAMES_NUMBER * 100}vw`,
 					height: '100%',
 					objectFit: 'fit',
 					opacity: 0.5
 				}}
 				onLoadingComplete={() => {
-					console.log('loaded?');
+					console.log("we're done");
+					setLoaded();
 				}}
 			/>
 		</div>

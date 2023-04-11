@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Box } from '@mui/material';
-import { Gr, SectionName, Text } from '@/src/ui/text';
+import { Text } from '@/src/ui/text';
 import ctaLine from '@/public/lines/cta-line.svg';
 import tg from '@/public/icons/tg.svg';
 import whatsapp from '@/public/icons/whatsapp.svg';
@@ -75,7 +75,11 @@ const CTA = () => {
 					sx={{
 						ml: 2,
 						cursor: 'pointer',
-						textDecoration: 'none'
+						textDecoration: 'none',
+						borderBottom: '1px dashed transparent',
+						borderImage:
+							'linear-gradient(90deg, rgba(65,65,65,0) 0%, rgba(75,135,200,.5) 17%, rgba(75,135,200,.5) 24%, rgba(75,135,200,.5) 100%)',
+						borderImageSlice: 1
 					}}
 				>
 					+7 982 754 75 98

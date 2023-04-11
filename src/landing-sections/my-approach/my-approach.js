@@ -2,8 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { Container } from '@mui/material';
-import { Gr, SectionName, Text } from '@/src/ui/text';
+import { Bl, SectionName, Text } from '@/src/ui/text';
 import triangles from '../../../public/lines/triangles.svg';
 import CTA from '@/src/ui/cta';
 
@@ -18,13 +17,28 @@ const MyApproachSection = () => {
 					minHeight: '50vh',
 					padding: 24,
 					position: 'relative',
-					overflowX: 'hidden',
-					scrollSnapAlign: 'center'
+					overflowX: 'hidden'
 				}}
 			>
-				<SectionName pb={2}>
-					Мо<Gr>й</Gr> подход
-				</SectionName>
+				<div style={{ position: 'relative' }}>
+					<SectionName pb={2}>
+						Мо<Bl>й</Bl> подход
+					</SectionName>
+					<Image
+						src={triangles}
+						alt={'triangles'}
+						width={250}
+						height={100}
+						sizes='100vw'
+						style={{
+							width: '33%',
+							height: 'auto',
+							position: 'absolute',
+							top: -16,
+							right: 0
+						}}
+					/>
+				</div>
 				<Text textAlign={'justify'} variant={'body1'}>
 					Я работаю в рамках долгосрочной терапии – клиенты на протяжении систематических сессий приобретают новый опыт,
 					который важен для глубоких внутренних изменений.
@@ -35,20 +49,6 @@ const MyApproachSection = () => {
 				</Text>
 				<CTA />
 			</section>
-			<Image
-				src={triangles}
-				alt={'triangles'}
-				width={250}
-				height={100}
-				sizes='100vw'
-				style={{
-					width: '50%',
-					height: 'auto',
-					position: 'absolute',
-					top: ref.current?.offsetTop ? ref.current.offsetTop - 56 : -1000,
-					right: 0
-				}}
-			/>
 		</>
 	);
 };

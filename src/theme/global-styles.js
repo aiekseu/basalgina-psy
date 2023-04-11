@@ -4,12 +4,10 @@ import { GlobalStyles } from '@mui/material';
 const UserGlobalStyles = () => (
 	<GlobalStyles
 		styles={{
-			html: {
-				// scrollSnapType: 'y mandatory'
-			},
 			body: {
 				margin: 0,
-				backgroundColor: '#f3f3f3'
+				backgroundColor: '#f3f3f3',
+				overflow: 'hidden'
 			},
 			a: {
 				textDecoration: 'none'

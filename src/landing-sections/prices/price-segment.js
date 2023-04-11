@@ -8,15 +8,12 @@ const PriceSegment = ({ price, first }) => {
 	return (
 		<div
 			style={{
-				// minHeight: '33svh',
 				marginTop: first ? 32 : '12vh',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
-				overflowX: 'hidden',
-				scrollSnapAlign: 'center',
-				scrollSnapStop: 'always'
+				overflowX: 'hidden'
 			}}
 		>
 			<Stack

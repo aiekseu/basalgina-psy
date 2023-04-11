@@ -39,11 +39,11 @@ const prices = [
 	}
 ];
 
-const PricesSection = () => {
+const PricesSection = ({ setLoaded }) => {
 	return (
 		<>
 			<section ref={pricesRef}>
-				<Roll />
+				<Roll setLoaded={setLoaded} />
 				<div
 					style={{
 						padding: 24,

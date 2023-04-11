@@ -2,12 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Box, Container } from '@mui/material';
-import { Gr, Text } from '@/src/ui/text';
+import { Bl, Text } from '@/src/ui/text';
 import tanya from '../../../public/images/tanya.jpg';
 import line1 from '../../../public/lines/line1.svg';
-import line2 from '../../../public/lines/line2.svg';
-import line3 from '../../../public/lines/line3.svg';
 
 const HeroSection = () => {
 	return (
@@ -18,26 +15,22 @@ const HeroSection = () => {
 					padding: 0,
 					position: 'relative',
 					overflow: 'hidden',
-					scrollSnapAlign: 'start'
+					display: 'flex',
+					flexDirection: 'column'
 				}}
 			>
 				<div
 					style={{
-						paddingTop: '35%',
 						width: '100%',
 						textAlign: 'center',
-						position: 'relative'
+						position: 'relative',
+						paddingTop: 80
 					}}
 				>
 					<Text accent variant={'h2'}>
-						Т<Gr>а</Gr>
+						Т<Bl>а</Bl>
 						ня Басалги
-						<Gr>н</Gr>а
-					</Text>
-					<Text accent variant={'h3'} mt={5}>
-						пси
-						<Gr>х</Gr>
-						олог
+						<Bl>н</Bl>а
 					</Text>
 					<Image
 						src={line1}
@@ -48,61 +41,33 @@ const HeroSection = () => {
 						style={{
 							width: '90vw',
 							height: 'auto',
-							position: 'absolute',
 							bottom: 0,
-							left: '5vw'
+							left: '5vw',
+							position: 'absolute'
 						}}
 					/>
+					<Text accent variant={'h3'} mt={5}>
+						пси
+						<Bl>х</Bl>
+						олог
+					</Text>
 				</div>
-				<div
+				<Image
+					src={tanya}
+					alt={'my photo'}
+					width={400}
+					height={600}
+					sizes='100vw'
 					style={{
-						position: 'absolute',
-						bottom: 0,
-						zIndex: -1,
-						overflowX: 'hidden'
+						width: '100%',
+						height: 'auto',
+						maxHeight: '75svh',
+						flexGrow: 1,
+						objectFit: 'cover',
+						opacity: 0.9
 					}}
-				>
-					<Image
-						src={tanya}
-						alt={'my photo'}
-						width={400}
-						height={600}
-						sizes='100vw'
-						style={{
-							width: '100%',
-							height: 'auto'
-						}}
-					/>
-					<Image
-						src={line2}
-						alt={'line2'}
-						width={250}
-						height={100}
-						sizes='100vw'
-						style={{
-							width: 'auto',
-							height: '30vh',
-							position: 'absolute',
-							top: '40%',
-							left: '25vw'
-						}}
-					/>
-				</div>
+				/>
 			</section>
-			<Image
-				src={line3}
-				alt={'line3'}
-				width={250}
-				height={80}
-				sizes='100vw'
-				style={{
-					width: 'auto',
-					height: '30vh',
-					position: 'absolute',
-					bottom: '-6%',
-					right: 0
-				}}
-			/>
 		</>
 	);
 };

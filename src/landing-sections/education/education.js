@@ -8,8 +8,7 @@ const EducationSection = () => {
 			ref={educationRef}
 			style={{
 				background: '#ffcfcf',
-				height: '70svh',
-				scrollSnapAlign: 'center'
+				height: '70svh'
 			}}
 		>
 			Образование
