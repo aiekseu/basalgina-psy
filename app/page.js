@@ -12,6 +12,7 @@ import EducationSection from '@/src/landing-sections/education/education';
 import LoadingScreen from '@/src/loading';
 import Footer from '@/src/ui/footer';
 import MobileLikeView from '@/app/mobile-like-view';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
 	const [loaded, setLoaded] = useState(false);
@@ -40,6 +41,7 @@ export default function Home() {
 					<EducationSection />
 					<Footer />
 				</MobileLikeView>
+				<Analytics />
 			</ThemeProvider>
 		</main>
 	);
