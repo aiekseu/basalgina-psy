@@ -39,10 +39,11 @@ const HeroSection = () => {
 						height={80}
 						sizes='100vw'
 						style={{
-							width: '90vw',
+							width: '90%',
 							height: 'auto',
 							bottom: 0,
-							left: '5vw',
+							left: '50%',
+							transform: 'translateX(-50%)',
 							position: 'absolute'
 						}}
 					/>

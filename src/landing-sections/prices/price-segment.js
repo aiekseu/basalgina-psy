@@ -32,6 +32,11 @@ const PriceSegment = ({ price, first }) => {
 			<Text textAlign={'justify'} mt={2} width={'100%'}>
 				{price.description}
 			</Text>
+			{first && (
+				<Text mt={2}>
+					Пройти психодиагностику – <a href={'https://forms.gle/rLRQUWahEVcvw6jw6'}>forms.gle/rLRQUWahEVcvw6jw6</a>
+				</Text>
+			)}
 			<Text accent mt={3} variant={'h4'} textAlign={'end'} width={'100%'}>
 				{price.cost}
 			</Text>

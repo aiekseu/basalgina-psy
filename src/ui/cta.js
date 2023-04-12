@@ -1,23 +1,23 @@
 'use client';
 
 import React from 'react';
-import { Box } from '@mui/material';
 import { Text } from '@/src/ui/text';
 import ctaLine from '@/public/lines/cta-line.svg';
 import tg from '@/public/icons/tg.svg';
 import whatsapp from '@/public/icons/whatsapp.svg';
 import Image from 'next/image';
 
-const CTA = () => {
+const CTA = ({ style }) => {
 	return (
-		<Box
-			sx={{
+		<div
+			style={{
 				width: '100%',
-				mt: 3
+				marginTop: 24,
+				...style
 			}}
 		>
 			<Text accent textAlign={'center'} variant={'h4'} lineHeight={0.1}>
-				запись на сессию
+				запись на диагностику
 			</Text>
 			<Image
 				src={ctaLine}
@@ -31,7 +31,13 @@ const CTA = () => {
 					marginLeft: '24%'
 				}}
 			/>
-			<Box display={'flex'} alignItems={'center'} mt={1}>
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					marginTop: 8
+				}}
+			>
 				<Image
 					src={tg}
 					alt={'tg_icon'}
@@ -50,13 +56,23 @@ const CTA = () => {
 					sx={{
 						ml: 2,
 						cursor: 'pointer',
-						textDecoration: 'none'
+						textDecoration: 'none',
+						borderBottom: '1px dashed transparent',
+						borderImage:
+							'linear-gradient(90deg, rgba(65,65,65,0) 0%, rgba(75,135,200,.5) 17%, rgba(75,135,200,.5) 24%, rgba(75,135,200,.5) 100%)',
+						borderImageSlice: 1
 					}}
 				>
 					t.me/basalgina
 				</Text>
-			</Box>
-			<Box display={'flex'} alignItems={'center'} mt={2}>
+			</div>
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					marginTop: 16
+				}}
+			>
 				<Image
 					src={whatsapp}
 					alt={'whatsapp_icon'}
@@ -84,8 +100,8 @@ const CTA = () => {
 				>
 					+7 982 754 75 98
 				</Text>
-			</Box>
-		</Box>
+			</div>
+		</div>
 	);
 };
 

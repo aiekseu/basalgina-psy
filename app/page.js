@@ -10,6 +10,8 @@ import MyApproachSection from '@/src/landing-sections/my-approach/my-approach';
 import PricesSection from '@/src/landing-sections/prices/prices';
 import EducationSection from '@/src/landing-sections/education/education';
 import LoadingScreen from '@/src/loading';
+import Footer from '@/src/ui/footer';
+import MobileLikeView from '@/app/mobile-like-view';
 
 export default function Home() {
 	const [loaded, setLoaded] = useState(false);
@@ -29,11 +31,14 @@ export default function Home() {
 				<CssBaseline />
 				<UserGlobalStyles />
 				{!loaded && <LoadingScreen />}
-				<HeroSection />
-				<WhoIWorkWithSection />
-				<MyApproachSection />
-				<PricesSection setLoaded={handleLoaded} />
-				<EducationSection />
+				<MobileLikeView>
+					<HeroSection />
+					<WhoIWorkWithSection />
+					<MyApproachSection />
+					<PricesSection setLoaded={handleLoaded} />
+					<EducationSection />
+					<Footer />
+				</MobileLikeView>
 			</ThemeProvider>
 		</main>
 	);

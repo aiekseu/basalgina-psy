@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { pricesRef } from '@/src/landing-sections/prices/prices';
 import { educationRef } from '@/src/landing-sections/education/education';
 import rollSpritesheet from '../../../public/spritesheets/spritesheet.png';
+import useIsDesktop from '@/src/hooks/use-desktop';
+import { MOBILE_WIDTH } from '@/app/mobile-like-view';
 
 const FRAMES_NUMBER = 69;
 
@@ -11,6 +13,8 @@ const Roll = ({ setLoaded }) => {
 	const [offset, setOffset] = useState(0);
 	const [pricesOffset, setPricesOffset] = useState(0);
 	const [educationOffset, setEducationOffset] = useState(0);
+
+	const isDesktop = useIsDesktop();
 
 	useEffect(() => {
 		const onScroll = () => setOffset(window.scrollY);
@@ -25,10 +29,22 @@ const Roll = ({ setLoaded }) => {
 			setPricesOffset(pricesRef.current.offsetTop);
 			setEducationOffset(educationRef.current.offsetTop);
 		}
-	}, [pricesRef]);
+	}, []);
 
 	useEffect(() => {
-		if (offset >= pricesOffset - 0.66 * window.innerHeight) {
+		if (isDesktop) {
+			// DESKTOP CALC
+			const step = (document.body.scrollHeight - window.innerHeight) / FRAMES_NUMBER;
+			let newFrame = Math.floor(offset / step);
+			if (newFrame < 0) {
+				newFrame = 0;
+			} else if (newFrame > FRAMES_NUMBER - 1) {
+				newFrame = FRAMES_NUMBER - 1;
+			}
+			console.log(newFrame);
+			setFrame(newFrame);
+		} else if (offset >= pricesOffset - 0.66 * window.innerHeight) {
+			// MOBILE CALC
 			const height = educationOffset - pricesOffset;
 			const step = height / FRAMES_NUMBER;
 			let newFrame = Math.floor((offset - pricesOffset + 0.66 * window.innerHeight) / step);
@@ -39,16 +55,17 @@ const Roll = ({ setLoaded }) => {
 			}
 			setFrame(newFrame);
 		}
-	}, [offset]);
+	}, [educationOffset, isDesktop, offset, pricesOffset]);
 
 	return (
 		<div
 			style={{
-				position: 'sticky',
+				position: isDesktop ? 'fixed' : 'sticky',
 				top: 0,
+				right: 0,
 				overflow: 'hidden',
 				height: 'calc(100svh - 16px)',
-				width: '100vw',
+				width: isDesktop ? `min(calc(50vw - ${MOBILE_WIDTH / 2}px), 600px)` : '100vw',
 				zIndex: -1
 			}}
 		>
@@ -57,17 +74,15 @@ const Roll = ({ setLoaded }) => {
 				unoptimized
 				src={rollSpritesheet}
 				alt={'roll'}
-				sizes={'6900vw'}
 				quality={100}
 				style={{
-					transform: `translateX(${-frame * 100}vw)`,
-					width: `${FRAMES_NUMBER * 100}vw`,
+					transform: isDesktop ? `translateX(${(-frame * 100) / FRAMES_NUMBER}%)` : `translateX(${-frame * 100}vw)`,
+					width: isDesktop ? `${FRAMES_NUMBER * 100}%` : `${FRAMES_NUMBER * 100}vw`,
 					height: '100%',
 					objectFit: 'fit',
 					opacity: 0.5
 				}}
 				onLoadingComplete={() => {
-					console.log("we're done");
 					setLoaded();
 				}}
 			/>
