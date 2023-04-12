@@ -24,13 +24,16 @@ const Footer = () => {
 			<div
 				style={{
 					background: '#eaeaea',
-					width: '100%'
+					width: '100%',
+					paddingTop: 16,
+					paddingBottom: 16
 				}}
 			>
 				<Text
 					variant={'body2'}
 					style={{
-						textAlign: 'center'
+						textAlign: 'center',
+						fontSize: '0.7rem'
 					}}
 				>{`СЗ БАСАЛГИНА ТАТЬЯНА АЛЕКСЕЕВНА\nИНН 590610331533\n2023`}</Text>
 			</div>
