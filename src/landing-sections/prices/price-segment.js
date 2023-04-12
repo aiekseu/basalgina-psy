@@ -34,7 +34,10 @@ const PriceSegment = ({ price, first }) => {
 			</Text>
 			{first && (
 				<Text mt={2}>
-					Пройти психодиагностику – <a href={'https://forms.gle/rLRQUWahEVcvw6jw6'}>forms.gle/rLRQUWahEVcvw6jw6</a>
+					Пройти психодиагностику –{' '}
+					<a href={'https://forms.gle/rLRQUWahEVcvw6jw6'} target={'_blank'}>
+						forms.gle/rLRQUWahEVcvw6jw6
+					</a>
 				</Text>
 			)}
 			<Text accent mt={3} variant={'h4'} textAlign={'end'} width={'100%'}>

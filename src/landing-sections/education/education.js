@@ -36,9 +36,9 @@ const EducationSection = () => {
 						objectFit: 'cover'
 					}}
 				/>
-				<CTA />
-				<div style={{ paddingLeft: 24, paddingRight: 24, marginTop: 32 }}>
-					<SectionName>
+				<div style={{ paddingLeft: 24, paddingRight: 24 }}>
+					<CTA />
+					<SectionName style={{ marginTop: 32 }}>
 						Образование <Bl>&</Bl> дипломы
 					</SectionName>
 					<DiplomaContainer

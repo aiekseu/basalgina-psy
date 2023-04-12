@@ -12,11 +12,14 @@ const Footer = () => {
 				flexDirection: 'column'
 			}}
 		>
-			<Text py={8} textAlign={'center'}>
-				Подробно о своей практике и о себе рассказываю в инстаграме{' '}
-				<a href={'https://instagram.com/basalgina'}>
+			<Text pt={8} textAlign={'center'}>
+				Подробно о своей практике и о себе рассказываю в инстаграме*{' '}
+				<a href={'https://instagram.com/basalgina'} target={'_blank'}>
 					<Bl>@basalgina</Bl>
 				</a>
+			</Text>
+			<Text style={{ fontSize: '0.5rem', paddingBottom: 64 }}>
+				*Признаны экстремистскими организациями и запрещены на территории РФ
 			</Text>
 			<div
 				style={{

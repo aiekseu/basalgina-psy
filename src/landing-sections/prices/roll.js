@@ -41,7 +41,6 @@ const Roll = ({ setLoaded }) => {
 			} else if (newFrame > FRAMES_NUMBER - 1) {
 				newFrame = FRAMES_NUMBER - 1;
 			}
-			console.log(newFrame);
 			setFrame(newFrame);
 		} else if (offset >= pricesOffset - 0.66 * window.innerHeight) {
 			// MOBILE CALC
