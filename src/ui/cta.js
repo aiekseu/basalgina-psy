@@ -16,21 +16,29 @@ const CTA = ({ style }) => {
 				...style
 			}}
 		>
-			<Text accent textAlign={'center'} variant={'h4'} lineHeight={0.1}>
-				запись на диагностику
-			</Text>
-			<Image
-				src={ctaLine}
-				alt={'ctaLine'}
-				width={280}
-				height={1}
-				sizes='100vw'
-				style={{
-					width: '60%',
-					height: '1px',
-					marginLeft: '24%'
-				}}
-			/>
+			<div style={{ position: 'relative' }}>
+				<a
+					href={'https://forms.gle/rLRQUWahEVcvw6jw6'}
+					target={'_blank'}
+					style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}
+				/>
+				<Text accent textAlign={'center'} variant={'h4'} lineHeight={0.1}>
+					запись на диагностику
+				</Text>
+				<Image
+					src={ctaLine}
+					alt={'ctaLine'}
+					width={280}
+					height={1}
+					sizes='100vw'
+					style={{
+						width: '60%',
+						height: '1px',
+						marginLeft: '24%',
+						zIndex: -1
+					}}
+				/>
+			</div>
 			<div
 				style={{
 					display: 'flex',
