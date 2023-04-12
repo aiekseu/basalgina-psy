@@ -44,7 +44,8 @@ const HeroSection = () => {
 							bottom: 0,
 							left: '50%',
 							transform: 'translateX(-50%)',
-							position: 'absolute'
+							position: 'absolute',
+							opacity: 0.7
 						}}
 					/>
 					<Text accent variant={'h3'} mt={5}>
