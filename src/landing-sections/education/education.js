@@ -3,7 +3,7 @@ import CTA from '@/src/ui/cta';
 import { Bl, SectionName, Text } from '@/src/ui/text';
 import Image from 'next/image';
 import theme from '@/src/theme/theme';
-import { Dialog, DialogContent, DialogTitle, IconButton } from '@mui/material';
+import { Dialog, DialogContent, IconButton } from '@mui/material';
 import close from '../../../public/icons/close.svg';
 import useIsDesktop from '@/src/hooks/use-desktop';
 
@@ -61,6 +61,20 @@ const EducationSection = () => {
 							{'\n'}член АКПН
 						</Text>
 						<DiplomaImage second url={'/diplomas/akpn.jpg'} />
+					</DiplomaContainer>
+					<DiplomaContainer
+						style={{ marginTop: 24 }}
+						onClick={() =>
+							handleOpenDiploma({
+								title: 'Конференции по Терапии Принятия и Ответственности',
+								url: '/diplomas/conf3.jpg'
+							})
+						}
+					>
+						<DiplomaImage url={'/diplomas/conf3.jpg'} />
+						<Text textAlign={'center'} width={'50%'} variant={'body2'}>
+							Конференции по Терапии Принятия и Ответственности
+						</Text>
 					</DiplomaContainer>
 				</div>
 			</section>
@@ -136,7 +150,7 @@ const DiplomaImage = ({ second, url }) => {
 				}
 			}}
 		>
-			{second ? (
+			{url ? (
 				<div
 					style={{
 						width: second ? '97%' : '95%',
