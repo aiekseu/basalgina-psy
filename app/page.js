@@ -22,7 +22,7 @@ export default function Home() {
 	useEffect(() => {
 		if (loaded) {
 			document.body.style.overflow = 'scroll';
-			console.log('Разработка сайта - t.me/aiekseu');
+			console.log('Разработка сайта - https://t.me/aiekseu');
 		}
 	}, [loaded]);
 
