@@ -6,7 +6,7 @@ export const metadata = {
 		'– помогаю найти свой темп жизни\n' +
 		'запись через психодиагностику ↓\n' +
 		'forms.gle/rLRQUWahEVcvw6jw6.',
-	'yandex-verification': '3a6042a7a0841770'
+	other: { 'yandex-verification': '3a6042a7a0841770' }
 };
 
 export default function RootLayout({ children }) {
