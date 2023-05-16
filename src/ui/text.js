@@ -15,11 +15,17 @@ const montserrat = Montserrat({
 	weight: ['200', '300', '400', '500', '600']
 });
 
-export const Text = ({ children, accent, fontWeight, ...props }) => {
+export const Text = ({ children, accent, fontWeight, nonSelectable = false, ...props }) => {
 	const textStyle = accent ? poiret.style : montserrat.style;
 
 	return (
-		<Typography sx={{ ...textStyle, ...props.sx, fontWeight: fontWeight ? fontWeight : accent ? 400 : 300 }} {...props}>
+		<Typography
+			sx={{ ...textStyle, ...props.sx, fontWeight: fontWeight ? fontWeight : accent ? 400 : 300 }}
+			style={{
+				userSelect: nonSelectable ? 'none' : 'auto'
+			}}
+			{...props}
+		>
 			{children}
 		</Typography>
 	);
