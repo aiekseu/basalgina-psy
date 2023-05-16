@@ -5,7 +5,7 @@ const Paragraph = props => {
 	const { children, variant = 'body1', mt = 2, ...restProps } = props;
 
 	return (
-		<Text variant={variant} mt={mt} {...restProps}>
+		<Text variant={variant} mt={mt} whiteSpace={'pre-wrap'} {...restProps}>
 			{children}
 		</Text>
 	);
