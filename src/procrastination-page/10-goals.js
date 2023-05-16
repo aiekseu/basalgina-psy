@@ -16,7 +16,10 @@ const Goals = props => {
 				с не теми целями
 			</Paragraph>
 			<Paragraph>
-				<Text fontWeight={500}>Что делать:</Text>
+				<Text fontWeight={500} component={'span'}>
+					Что делать:
+				</Text>
+				<br />
 				{`1.\tИщем глубинную мотивацию ваших целей: «Зачем мы это делаем?» Ознакомьтесь с роликом, чтобы понять: `}
 				<a
 					href={

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MobileLikeView from './borders';
 import { Analytics } from '@vercel/analytics/react';
 import { Text } from '@/src/ui/text';
@@ -18,14 +18,26 @@ import Goals from '@/src/procrastination-page/10-goals';
 import BaseTask from '@/src/procrastination-page/11-base-task';
 import Books from '@/src/procrastination-page/13-books';
 import Tecniques from '@/src/procrastination-page/12-tecniques';
+import LoadingScreen from '@/src/loading';
 
 export default function ProcrastinationPage() {
+	const [loaded, setLoaded] = useState(false);
+
+	useEffect(() => {
+		setLoaded(true);
+		if (loaded) {
+			document.body.style.overflow = 'scroll';
+			console.log('Разработка сайта - https://t.me/aiekseu');
+		}
+	}, [loaded]);
+
 	return (
 		<>
+			{!loaded && <LoadingScreen />}
 			<MobileLikeView>
 				<main style={{ padding: '0px 12px' }}>
 					<ProcrastinationAppbar />
-					<Text variant={'h3'} component={'h1'} accent>
+					<Text variant={'h4'} component={'h1'} accent>
 						Чеклист работы с прокрастинацией
 					</Text>
 					<ProcrastinationDisclaimer style={{ marginTop: 30 }} />

@@ -10,6 +10,7 @@ import LoadingScreen from '@/src/loading';
 import Footer from '@/src/ui/footer';
 import MobileLikeView from '@/app/mobile-like-view';
 import { Analytics } from '@vercel/analytics/react';
+import AppThemeProvider from '@/src/theme/theme-provider';
 
 export default function Home() {
 	const [loaded, setLoaded] = useState(false);
@@ -27,14 +28,16 @@ export default function Home() {
 	return (
 		<>
 			{!loaded && <LoadingScreen />}
-			<MobileLikeView>
-				<HeroSection />
-				<WhoIWorkWithSection />
-				<MyApproachSection />
-				<PricesSection setLoaded={handleLoaded} />
-				<EducationSection />
-				<Footer />
-			</MobileLikeView>
+			<AppThemeProvider>
+				<MobileLikeView>
+					<HeroSection />
+					<WhoIWorkWithSection />
+					<MyApproachSection />
+					<PricesSection setLoaded={handleLoaded} />
+					<EducationSection />
+					<Footer />
+				</MobileLikeView>
+			</AppThemeProvider>
 			<Analytics />
 		</>
 	);
