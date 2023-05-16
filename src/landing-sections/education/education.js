@@ -49,7 +49,7 @@ const EducationSection = () => {
 						<Text textAlign={'justify'} width={'50%'} variant={'body2'}>
 							Высшая Школа Психологии, «Психологическое консультирование» (профессиональная переподготовка, 1050 ак. ч)
 							{'\n'}
-							2021 - н.в.
+							2021 - 2023.
 						</Text>
 					</DiplomaContainer>
 					<DiplomaContainer
