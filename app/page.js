@@ -2,9 +2,6 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import HeroSection from '@/src/landing-sections/hero/hero';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import theme from '@/src/theme/theme';
-import UserGlobalStyles from '@/src/theme/global-styles';
 import WhoIWorkWithSection from '@/src/landing-sections/who-i-work-with/who-i-work-with';
 import MyApproachSection from '@/src/landing-sections/my-approach/my-approach';
 import PricesSection from '@/src/landing-sections/prices/prices';
@@ -28,21 +25,17 @@ export default function Home() {
 	}, [loaded]);
 
 	return (
-		<main>
-			<ThemeProvider theme={theme}>
-				<CssBaseline />
-				<UserGlobalStyles />
-				{!loaded && <LoadingScreen />}
-				<MobileLikeView>
-					<HeroSection />
-					<WhoIWorkWithSection />
-					<MyApproachSection />
-					<PricesSection setLoaded={handleLoaded} />
-					<EducationSection />
-					<Footer />
-				</MobileLikeView>
-				<Analytics />
-			</ThemeProvider>
-		</main>
+		<>
+			{!loaded && <LoadingScreen />}
+			<MobileLikeView>
+				<HeroSection />
+				<WhoIWorkWithSection />
+				<MyApproachSection />
+				<PricesSection setLoaded={handleLoaded} />
+				<EducationSection />
+				<Footer />
+			</MobileLikeView>
+			<Analytics />
+		</>
 	);
 }

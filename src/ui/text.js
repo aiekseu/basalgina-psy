@@ -11,14 +11,15 @@ const poiret = Poiret_One({
 
 const montserrat = Montserrat({
 	subsets: ['cyrillic'],
-	display: 'swap'
+	display: 'swap',
+	weight: ['200', '300', '400', '500', '600']
 });
 
-export const Text = ({ children, accent, ...props }) => {
+export const Text = ({ children, accent, fontWeight, ...props }) => {
 	const textStyle = accent ? poiret.style : montserrat.style;
 
 	return (
-		<Typography {...props} sx={{ ...textStyle, ...props.sx, fontWeight: accent ? 400 : 300 }}>
+		<Typography sx={{ ...textStyle, ...props.sx, fontWeight: fontWeight ? fontWeight : accent ? 400 : 300 }} {...props}>
 			{children}
 		</Typography>
 	);

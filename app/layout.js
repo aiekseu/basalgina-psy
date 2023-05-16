@@ -1,3 +1,5 @@
+import AppThemeProvider from '@/src/theme/theme-provider';
+
 export const metadata = {
 	title: 'Психолог Таня Басалгина',
 	description:
@@ -12,7 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='ru'>
-			<body>{children}</body>
+			<body>
+				<AppThemeProvider>{children}</AppThemeProvider>
+			</body>
 		</html>
 	);
 }
