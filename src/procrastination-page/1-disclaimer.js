@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Paragraph from '@/src/procrastination-page/paragraph';
+import Meme from '@/src/ui/meme';
 
 const ProcrastinationDisclaimer = props => {
 	return (
@@ -26,6 +27,7 @@ const ProcrastinationDisclaimer = props => {
 					Лучшее, что можно сделать после прочтения чек-листа – выписать для себя 1-2 способа работы с прокрастинацией,
 					которые актуальны для вас на данный момент
 				</Paragraph>
+				<Meme src={'/images/procrastination/1.jpeg'} />
 			</section>
 		</>
 	);

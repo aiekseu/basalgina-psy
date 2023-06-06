@@ -40,19 +40,19 @@ export default function ProcrastinationPage() {
 					<Text variant={'h4'} component={'h1'} accent>
 						Чеклист работы с прокрастинацией
 					</Text>
-					<ProcrastinationDisclaimer style={{ marginTop: 30 }} />
-					<WhatIsProcrastination style={{ marginTop: 30 }} />
-					<WhatToGet style={{ marginTop: 30 }} />
-					<Factors style={{ marginTop: 30 }} />
-					<ProcrastinationVsLaziness style={{ marginTop: 30 }} />
-					<Checklist style={{ marginTop: 30 }} />
-					<Clearing style={{ marginTop: 30 }} />
-					<ClearingHead style={{ marginTop: 30 }} />
-					<Relax style={{ marginTop: 30 }} />
-					<Goals style={{ marginTop: 30 }} />
-					<BaseTask style={{ marginTop: 30 }} />
-					<Tecniques style={{ marginTop: 30 }} />
-					<Books style={{ marginTop: 30 }} />
+					<ProcrastinationDisclaimer style={{ marginTop: 30, position: 'relative' }} />
+					<WhatIsProcrastination style={{ marginTop: 30, position: 'relative' }} />
+					<WhatToGet style={{ marginTop: 30, position: 'relative' }} />
+					<Factors style={{ marginTop: 30, position: 'relative' }} />
+					<ProcrastinationVsLaziness style={{ marginTop: 30, position: 'relative' }} />
+					<Checklist style={{ marginTop: 30, position: 'relative' }} />
+					<Clearing style={{ marginTop: 30, position: 'relative' }} />
+					<ClearingHead style={{ marginTop: 30, position: 'relative' }} />
+					<Relax style={{ marginTop: 30, position: 'relative' }} />
+					<Goals style={{ marginTop: 30, position: 'relative' }} />
+					<BaseTask style={{ marginTop: 30, position: 'relative' }} />
+					<Tecniques style={{ marginTop: 30, position: 'relative' }} />
+					<Books style={{ marginTop: 30, position: 'relative' }} />
 				</main>
 			</MobileLikeView>
 			<Analytics />

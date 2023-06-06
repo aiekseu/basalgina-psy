@@ -3,6 +3,7 @@
 import React from 'react';
 import Paragraph from '@/src/procrastination-page/paragraph';
 import { Text } from '@/src/ui/text';
+import Meme from '@/src/ui/meme';
 
 const ProcrastinationVsLaziness = props => {
 	return (
@@ -31,6 +32,7 @@ const ProcrastinationVsLaziness = props => {
 				В то время как прокрастинация характеризуется уклонением от конкретных задач, лень проявляется в общем нежелании
 				прилагать усилия и заниматься активностями.
 			</Paragraph>
+			<Meme src={'/images/procrastination/4.jpeg'} width={'50%'} />
 		</section>
 	);
 };

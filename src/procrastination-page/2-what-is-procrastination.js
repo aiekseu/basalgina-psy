@@ -3,6 +3,7 @@
 import React from 'react';
 import Paragraph from '@/src/procrastination-page/paragraph';
 import { Text } from '@/src/ui/text';
+import Meme from '@/src/ui/meme';
 
 const WhatIsProcrastination = props => {
 	return (
@@ -39,6 +40,7 @@ const WhatIsProcrastination = props => {
 			<Paragraph fontWeight={400}>
 				Если отметили в своём поведении более 3х схожих пунктов, статья будет для вас актуальной.
 			</Paragraph>
+			<Meme src={'/images/procrastination/2.jpeg'} width={'50%'} />
 		</section>
 	);
 };

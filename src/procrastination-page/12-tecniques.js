@@ -3,6 +3,7 @@
 import React from 'react';
 import Paragraph from '@/src/procrastination-page/paragraph';
 import { Text } from '@/src/ui/text';
+import Meme from '@/src/ui/meme';
 
 const Tecniques = props => {
 	return (
@@ -18,6 +19,7 @@ const Tecniques = props => {
 4.\tТехника "сначала легкое": Начните с выполнения легких и быстрых задач, чтобы "разогреться" и войти в рабочий ритм, затем переходите к более сложным задачам.`}
 			</Paragraph>
 			<Paragraph>Этого достаточно, чтобы стать ракетой, которую не останавливает прокрастинация. Вперёд!</Paragraph>
+			<Meme src={'/images/procrastination/3.jpeg'} width={'75%'} />
 		</section>
 	);
 };
