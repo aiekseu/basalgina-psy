@@ -26,7 +26,7 @@ const Factors = props => {
 				<Text fontWeight={500} component={'span'}>
 					Прокрастинация
 				</Text>{' '}
-				— откладывание задач на потом из-за страха перед ними или их
+				— откладывание задач на потом из-за страха перед ними
 			</Paragraph>
 			<Paragraph>
 				<Text fontWeight={500} component={'span'}>
