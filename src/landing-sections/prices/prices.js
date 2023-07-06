@@ -19,7 +19,7 @@ const prices = [
 		cost: 'бесплатно',
 		linkText: 'Пройти психодиагностику – ',
 		linkLabel: 'forms.gle/rLRQUWahEVcvw6jw6',
-		link: 'forms.gle/rLRQUWahEVcvw6jw6'
+		link: 'https://forms.gle/rLRQUWahEVcvw6jw6'
 	},
 	{
 		title: '2. первая сессия',
