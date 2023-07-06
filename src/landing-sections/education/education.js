@@ -38,14 +38,14 @@ const EducationSection = () => {
 				/>
 				<div style={{ paddingLeft: 24, paddingRight: 24 }}>
 					<CTA />
-					<SectionName style={{ marginTop: 32 }}>
+					<SectionName style={{ marginTop: 64 }}>
 						Образование <Bl>&</Bl> дипломы
 					</SectionName>
 					<DiplomaContainer
 						style={{ marginTop: 32 }}
-						// onClick={() => handleOpenDiploma({ title: 'Высшая Школа Психологии', url: '/diplomas/hsp.jpg' })}
+						onClick={() => handleOpenDiploma({ title: 'Высшая Школа Психологии', url: '/diplomas/diploma.jpg' })}
 					>
-						<DiplomaImage />
+						<DiplomaImage url={'/diplomas/diploma.jpg'} />
 						<Text textAlign={'justify'} width={'50%'} variant={'body2'}>
 							Высшая Школа Психологии, «Психологическое консультирование» (профессиональная переподготовка, 1050 ак. ч)
 							{'\n'}
@@ -58,7 +58,7 @@ const EducationSection = () => {
 					>
 						<Text textAlign={'center'} width={'50%'} variant={'body2'}>
 							АСТ-подход,
-							{'\n'}член АКПН
+							{'\n'}член АКПН,{'\n'}февраль 2023
 						</Text>
 						<DiplomaImage second url={'/diplomas/akpn.jpg'} />
 					</DiplomaContainer>
@@ -73,8 +73,22 @@ const EducationSection = () => {
 					>
 						<DiplomaImage url={'/diplomas/conf3.jpg'} />
 						<Text textAlign={'center'} width={'50%'} variant={'body2'}>
-							Конференции по Терапии Принятия и Ответственности
+							Конференции по Терапии Принятия и Ответственности,{'\n'}апрель 2023
 						</Text>
+					</DiplomaContainer>
+					<DiplomaContainer
+						style={{ marginTop: 24 }}
+						onClick={() =>
+							handleOpenDiploma({
+								title: 'Завершение сепарации как путь к психологической зрелости',
+								url: '/diplomas/zskpkpz.jpg'
+							})
+						}
+					>
+						<Text textAlign={'center'} width={'50%'} variant={'body2'}>
+							Завершение сепарации как путь к психологической зрелости,{'\n'}июнь 2023
+						</Text>
+						<DiplomaImage second url={'/diplomas/zskpkpz.jpg'} />
 					</DiplomaContainer>
 				</div>
 			</section>
@@ -110,7 +124,7 @@ const EducationSection = () => {
 					}}
 					onClick={handleCloseDiploma}
 				>
-					<img src={close.src} width={32} height={32} />
+					<img src={close.src} alt={'close'} width={32} height={32} />
 				</IconButton>
 			</Dialog>
 		</>

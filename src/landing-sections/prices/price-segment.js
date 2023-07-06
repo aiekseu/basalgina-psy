@@ -4,11 +4,11 @@ import { Stack } from '@mui/material';
 import { Text } from '@/src/ui/text';
 import React from 'react';
 
-const PriceSegment = ({ price, first }) => {
+const PriceSegment = ({ price }) => {
 	return (
 		<div
 			style={{
-				marginTop: first ? 32 : '12vh',
+				marginTop: price?.link ? 32 : '12vh',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
@@ -29,14 +29,14 @@ const PriceSegment = ({ price, first }) => {
 				</Text>
 				<Text variant={'body2'}>{price.duration}</Text>
 			</Stack>
-			<Text textAlign={'justify'} mt={2} width={'100%'}>
+			<Text textAlign={'start'} mt={2} width={'100%'}>
 				{price.description}
 			</Text>
-			{first && (
-				<Text mt={2}>
-					Пройти психодиагностику –{' '}
-					<a href={'https://forms.gle/rLRQUWahEVcvw6jw6'} target={'_blank'}>
-						forms.gle/rLRQUWahEVcvw6jw6
+			{price.link && (
+				<Text mt={2} width={'100%'}>
+					{price.linkText}
+					<a href={price.link} target={'_blank'}>
+						{price.linkLabel}
 					</a>
 				</Text>
 			)}

@@ -4,8 +4,6 @@ import React from 'react';
 import { Bl, SectionName } from '@/src/ui/text';
 import Roll from '@/src/landing-sections/prices/roll';
 import PriceSegment from '@/src/landing-sections/prices/price-segment';
-import CTA from '@/src/ui/cta';
-import Image from 'next/image';
 import useIsDesktop from '@/src/hooks/use-desktop';
 
 export const pricesRef = React.createRef();
@@ -18,7 +16,10 @@ const prices = [
 			'Цель: кратко узнать ваш запрос и ожидания от терапии. На этой встрече мы можем предварительно понять, подходим ли друг другу.\n' +
 			'\n' +
 			'В случае, если вы записываетесь на первую сессию, отправляю документ «Контракт ответственности», где более подробно прописаны правила работы.',
-		cost: 'бесплатно'
+		cost: 'бесплатно',
+		linkText: 'Пройти психодиагностику – ',
+		linkLabel: 'forms.gle/rLRQUWahEVcvw6jw6',
+		link: 'forms.gle/rLRQUWahEVcvw6jw6'
 	},
 	{
 		title: '2. первая сессия',
@@ -36,10 +37,27 @@ const prices = [
 		cost: '3000 рублей'
 	},
 	{
-		title: '4. пакет на месяц',
-		duration: '4 сессии',
-		description: 'при единоразовой оплате',
-		cost: '11000 рублей'
+		title: '4. Курс по работе с прокрастинацией',
+		duration: '3 недели',
+		description:
+			'для тех, кто твёрдо намерен не просрать свою жизнь\n\n' +
+			'– 1 диагностическая сессия\n' +
+			'– 6 подкастов\n' +
+			'– 2 гайда, как настроить систему планирования под себя\n' +
+			'– ежедневная обратная связь в чате группы\n',
+		cost: '5000 рублей',
+		linkText: '',
+		linkLabel: 'Узнать, когда старт новой группы',
+		link: 'https://t.me/basalgina'
+	},
+	{
+		title: '5. Бонус!',
+		duration: '',
+		description: 'Чек-лист по работе с прокрастинацией',
+		cost: 'бесплатно',
+		linkText: 'Прочитать ',
+		linkLabel: 'здесь',
+		link: '/procrastination'
 	}
 ];
 
@@ -58,8 +76,8 @@ const PricesSection = ({ setLoaded }) => {
 				<SectionName>
 					Фор<Bl>м</Bl>ат работы
 				</SectionName>
-				{prices.map((price, index) => (
-					<PriceSegment key={price.title} price={price} first={index === 0} />
+				{prices.map(price => (
+					<PriceSegment key={price.title} price={price} />
 				))}
 			</div>
 		</section>

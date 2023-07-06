@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Bl, Text } from '@/src/ui/text';
-import tanya from '../../../public/images/tanya.jpg';
+import tanya from '../../../public/images/tanya2.jpg';
 import line1 from '../../../public/lines/line1.svg';
 
 const HeroSection = () => {
